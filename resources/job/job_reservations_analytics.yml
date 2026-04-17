@@ -12,33 +12,30 @@ resources:
       tasks:
         - task_key: bronze
           notebook_task:
-            notebook_path: /Workspace/Users/deivilanmattos@gmail.com/ES
-              DUG/esdug_dabs/src/bronze
+            notebook_path: ../../src/notebooks/bronze.ipynb
             base_parameters:
               catalog_source: samples
-              catalog_sink: catalog_sink
+              catalog_sink: ${var.bronze_catalog}
             source: WORKSPACE
           environment_key: Default
         - task_key: silver
           depends_on:
             - task_key: bronze
           notebook_task:
-            notebook_path: /Workspace/Users/deivilanmattos@gmail.com/ES
-              DUG/esdug_dabs/src/silver
+            notebook_path: ../../src/notebooks/silver.ipynb
             base_parameters:
-              catalog_source: bronze_dev
-              catalog_sink: silver_dev
+              catalog_source: ${var.bronze_catalog}
+              catalog_sink: ${var.silver_catalog}
             source: WORKSPACE
           environment_key: Default
         - task_key: gold
           depends_on:
             - task_key: silver
           notebook_task:
-            notebook_path: /Workspace/Users/deivilanmattos@gmail.com/ES
-              DUG/esdug_dabs/src/gold
+            notebook_path: ../../src/notebooks/gold.ipynb
             base_parameters:
-              catalog_source: silver_dev
-              catalog_sink: gold_dev
+              catalog_source: ${var.silver_catalog}
+              catalog_sink: ${var.gold_catalog}
             source: WORKSPACE
           environment_key: Default
       tags:
