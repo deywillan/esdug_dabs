@@ -4,3 +4,5 @@ targets:
       bronze_catalog: bronze_prd
       silver_catalog: silver_prd
       gold_catalog: gold_prd
+    # run_as:
+    #   service_principal_name: ''

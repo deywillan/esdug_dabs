@@ -3,7 +3,11 @@ targets:
     presets:
       name_prefix: "[dev ${workspace.current_user.short_name}] "
       source_linked_deployment: false
+      trigger_pause_status: PAUSED
     variables:
       bronze_catalog: bronze_dev
       silver_catalog: silver_dev
       gold_catalog: gold_dev
+    # permissions:
+    #   - user_name: someone@example.com
+    #     level: CAN_RUN
