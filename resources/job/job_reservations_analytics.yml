@@ -39,7 +39,7 @@ resources:
             source: WORKSPACE
           environment_key: Default
       tags:
-        business.domain: Sales
+        business.domain: Reservations
         business.owner: Data Engineering Team
       queue:
         enabled: true
