@@ -1,0 +1,10 @@
+variables:
+  bronze_catalog:
+    description: "Catálogo para a camada Bronze"
+    default: "bronze_dev"
+  silver_catalog:
+    description: "Catálogo para a camada Silver"
+    default: "silver_dev"
+  gold_catalog:
+    description: "Catálogo para a camada Gold"
+    default: "gold_dev"
